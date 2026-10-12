@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+:root {
+  --cream: #fbf1e3;
+  --parchment: #f3e1c7;
+  --choc: #4a2410;
+  --caramel: #b8672a;
+  --gold: #e0a84f;
+}
+
+@theme inline {
+  --color-cream: var(--cream);
+  --color-parchment: var(--parchment);
+  --color-choc: var(--choc);
+  --color-caramel: var(--caramel);
+  --color-gold: var(--gold);
+  --font-display: var(--font-playfair);
+  --font-hand: var(--font-caveat);
+  --font-body: var(--font-nunito);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--cream);
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(224,168,79,.14) 0, transparent 40%),
+    radial-gradient(circle at 85% 70%, rgba(184,103,42,.10) 0, transparent 45%);
+  color: var(--choc);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(3deg); }
+}
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(184,103,42,.5); }
+  100% { box-shadow: 0 0 0 18px rgba(184,103,42,0); }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-float-slow { animation: float 9s ease-in-out infinite; }
+.animate-pulse-ring { animation: pulse-ring 2s infinite; }
